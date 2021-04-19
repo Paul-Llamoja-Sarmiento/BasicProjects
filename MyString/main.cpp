@@ -6,7 +6,6 @@
 int main() 
 {
 	// Copy and move assignment
-
 	/*MyString a {"Hello"};              
 	MyString b;                             
 	b = a;      
