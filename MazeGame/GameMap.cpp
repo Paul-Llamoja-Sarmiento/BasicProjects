@@ -5,7 +5,7 @@
 
 
 GameMap::GameMap()
-  : gameOver{false} , level{1} , PlayerCell{nullptr}
+	: gameOver{false} , level{1} , PlayerCell{nullptr}
 {
 	load_map_from_file();
 	PlayerCell = &Cells[1][1];
