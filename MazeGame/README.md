@@ -1,1 +1,1 @@
-Console basic game, use a, w s, d to move your hero across the maze.
+Console basic game. Use a, w s, d to move your hero across the maze.
