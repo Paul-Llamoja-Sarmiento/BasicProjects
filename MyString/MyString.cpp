@@ -113,7 +113,7 @@ MyString operator-(const MyString &obj)
 }
 
 
-//Pre-increment - adds an "O" at the beginning
+//Pre-increment - adds an "O" at the end and then operates
 MyString &operator++(MyString &obj)
 {
 	char *buff = new char[std::strlen(obj.str) + 2];
@@ -127,17 +127,12 @@ MyString &operator++(MyString &obj)
 }	
 
 
-// Post-increment - adds an "O" at the end
-MyString &operator++(MyString &obj , int)
+// Post-increment - operates and then adds an "O" at the end
+MyString operator++(MyString &obj , int)
 {
-	char *buff = new char[std::strlen(obj.str) + 2];
-	std::strcpy(buff , obj.str);
-	std::strcat(buff , "O");
-
-	delete [] obj.str;
-	obj.str = buff;
-	buff = nullptr;
-	return obj;
+	MyString temp{obj};
+	++obj;
+	return temp;
 }
 
 
@@ -166,6 +161,14 @@ MyString operator+(const MyString &lhs , const MyString &rhs)
 	MyString temp(buff);
 	delete [] buff;
 	return temp;
+}
+
+
+// Concatenate + assignment
+MyString &operator+=(MyString &lhs , const MyString &rhs)
+{
+	lhs = lhs + rhs;
+	return lhs;
 }
 
 
@@ -199,6 +202,30 @@ std::istream &operator>>(std::istream &is , MyString &obj)
 	delete [] buff;
 	return is;	
 }
+
+
+// "Repeat" a string
+MyString operator*(const MyString &lhs , const int &n)
+{
+	size_t buffSize = (std::strlen(lhs.str) * n) + 1;
+	char *buff = new char[buffSize];
+	
+	std::strcpy(buff , lhs.str);
+	for(size_t i{} ; i < n - 1 ; i++)
+		std::strcat(buff , lhs.str);
+
+	MyString temp(buff);
+	delete [] buff;
+	return temp;
+}
+
+
+// "Repeat" a string + assignment
+MyString &operator*=(MyString &lhs , const int &n)
+{
+	lhs = lhs * n;
+	return lhs;
+}	
 
 
 // Display
