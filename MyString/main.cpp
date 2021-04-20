@@ -1,6 +1,6 @@
 #include <iostream>
-#include "MyString.h"
 #include <vector>
+#include "MyString.h"
 
 
 int main() 
