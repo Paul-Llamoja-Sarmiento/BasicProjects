@@ -7,15 +7,18 @@ class MyString
 {
 	//Overloaded operators as friend global functions
 	friend MyString operator-(const MyString &obj);				// "Negation" - make lowercase
-	friend MyString &operator++(MyString &obj);				// Pre-increment - adds an "O" at the beginning
-	friend MyString &operator++(MyString &obj , int);			// Post-increment - adds an "O" at the end
+	friend MyString &operator++(MyString &obj);				// Pre-increment - adds an "O" at the end
+	friend MyString operator++(MyString &obj , int);			// Post-increment - adds an "O" at the end
 	friend bool operator==(const MyString &lhs , const MyString &rhs);	// Equality
 	friend bool operator!=(const MyString &lhs , const MyString &rhs);	// Inequality
 	friend MyString operator+(const MyString &lhs , const MyString &rhs);	// Concatenate
+	friend MyString &operator+=(MyString &lhs , const MyString &rhs);	// Concatenate + assignment
 	friend bool operator<(const MyString &lhs , const MyString &rhs);	// Less than - compare the length
 	friend bool operator>(const MyString &lhs , const MyString &rhs);	// Greater than - compare the length
 	friend std::ostream &operator<<(std::ostream &os , const MyString &obj); 	// Insertion operator
 	friend std::istream &operator>>(std::istream &is , MyString &obj);	// Extraction operator
+	friend MyString operator*(const MyString &lhs , const int &n);		// "Repeat" a string
+	friend MyString &operator*=(MyString &lhs , const int &n);		// "Repeat" a string + assignment
 
 
 	public:
