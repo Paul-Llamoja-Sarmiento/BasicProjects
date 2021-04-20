@@ -40,7 +40,6 @@ class MyString
 	private:
 
 	char *str;				// Pointer to char[] that holds a C-Style string
-
 };
 
 #endif
