@@ -169,17 +169,35 @@ MyString operator+(const MyString &lhs , const MyString &rhs)
 }
 
 
-//Less than - compare the length
+// Less than - compare the length
 bool operator<(const MyString &lhs , const MyString &rhs)
 {
 	return (std::strlen(lhs.str) < std::strlen(rhs.str));	
 }
 
 
-//Greater than - compare the length
+// Greater than - compare the length
 bool operator>(const MyString &lhs , const MyString &rhs)
 {
 	return !(lhs < rhs);	
+}
+
+
+//Insertion operator
+std::ostream &operator<<(std::ostream &os , const MyString &obj)
+{
+	os << obj.str;
+	return os;
+}
+
+
+std::istream &operator>>(std::istream &is , MyString &obj)
+{
+	char *buff = new char[1000];
+	is >> buff;
+	obj = MyString(buff);
+	delete [] buff;
+	return is;	
 }
 
 
