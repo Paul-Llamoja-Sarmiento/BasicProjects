@@ -29,7 +29,7 @@ int main()
     	empty.display();             
     	larry.display();                      
     	stooge.display();       
-	stooges.display();	*/  
+	stooges.display();	*/ 
 
 
 	
@@ -60,14 +60,18 @@ int main()
 
 	// Test with pre and post operators
 	/*MyString a{"This is a test"};
-	a.display();
-	MyString b{"This is another test"};
-	b.display();
+	MyString a2{"This is another test"};
+	MyString b;
 	MyString c;
-	a++;
-	a.display();
-	++b;
-	b.display();*/
+	std::cout << a << std::endl;
+	b = ++a;
+	c = a2++;
+	std::cout << b << std::endl;
+	std::cout << a << std::endl;
+	std::cout << c << std::endl;
+	std::cout << a2 << std::endl;*/
+
+
 
 	//Testing equality and inequality
 	/*MyString a{"Hello"};
@@ -82,6 +86,12 @@ int main()
 	/*MyString first("Hola ");
 	MyString second("a todos ");
 	first = first + second + "los visitantes";
+	first.display();*/
+
+	//Testing with concatenate + assignment operators
+	/*MyString first("Hola ");
+	MyString second("a todos ");
+	first += second += "los visitantes" ;
 	first.display();*/
 
 	// Testing compare operators
@@ -100,6 +110,19 @@ int main()
 	std::cout << "Say hello in spanish: ";
 	std::cin >> a;
 	std::cout << "\nHello in spanish is: " << a << std::endl;*/
+
+	// Testing the "repeat" operator
+	/*MyString test("This is a repeat test ");
+	MyString output;
+	test.display();
+	output = test * 4;
+	output.display();*/
+
+	// Testing the "repeat" operator + assignment
+	/*MyString test2("This is a repeat test ");
+	test2.display();
+	test2 *= 2;
+	test2.display();*/
 
 	return 0;  
 }
