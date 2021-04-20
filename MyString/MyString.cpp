@@ -1,7 +1,7 @@
-#include "MyString.h"
 #include <iostream>
 #include <cstring>
 #include <cctype>
+#include "MyString.h"
 
 
 // No-args constructor
