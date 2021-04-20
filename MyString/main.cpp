@@ -94,5 +94,12 @@ int main()
 	std::cout << (x > y) << std::endl;
 	std::cout << (x < y) << std::endl;*/
 
+	// Testing the insertion and extractor operator
+	/*MyString a("Hello");
+	std::cout << a << std::endl;
+	std::cout << "Say hello in spanish: ";
+	std::cin >> a;
+	std::cout << "\nHello in spanish is: " << a << std::endl;*/
+
 	return 0;  
 }
