@@ -1,9 +1,10 @@
 #ifndef _MYSTRING_H_
 #define _MYSTRING_H_
 
+#include <iostream>
+
 class MyString
 {
-	
 	//Overloaded operators as friend global functions
 	friend MyString operator-(const MyString &obj);				// "Negation" - make lowercase
 	friend MyString &operator++(MyString &obj);				// Pre-increment - adds an "O" at the beginning
@@ -13,6 +14,8 @@ class MyString
 	friend MyString operator+(const MyString &lhs , const MyString &rhs);	// Concatenate
 	friend bool operator<(const MyString &lhs , const MyString &rhs);	// Less than - compare the length
 	friend bool operator>(const MyString &lhs , const MyString &rhs);	// Greater than - compare the length
+	friend std::ostream &operator<<(std::ostream &os , const MyString &obj); 	// Insertion operator
+	friend std::istream &operator>>(std::istream &is , MyString &obj);	// Extraction operator
 
 
 	public:
